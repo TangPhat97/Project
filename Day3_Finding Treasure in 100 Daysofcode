@@ -1,0 +1,17 @@
+cross = input("You are at the cross road.Where do you want to go? Type 'left' or 'right'").lower()
+if cross == 'left':
+  lake= input("You go to the lake.Type 'wait' to wait a boat. Type'swim' to swim across the lake.").lower()
+  if lake == 'wait':
+    door= input("You arrive an unharmed island.There is a house which 3 doors. One'red', one'blue', and one'yellow'. Which color you choose?").lower()
+    if door =='yellow':
+     print("You win")
+    elif door == 'blue':
+      print("Eaten by beasts.Game over")
+    elif door == 'red':
+      print("Burned by fire.Game over")
+    else:
+      print("Game over.")
+  else:
+    print("Attack by troll.Game over")
+else:
+  print("Go to the hole.Game over")
