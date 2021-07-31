@@ -1,0 +1,67 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+#Your choice
+choice = [rock,paper,scissors]
+
+mychoice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors:"))
+print(choice[mychoice])
+
+#Computer choice
+import random
+
+computer=len(choice)
+random_computerchoice=random.randint(0,computer-1)
+print("computer choose:")
+print(choice[random_computerchoice])
+#you choose rock and random computer
+if mychoice >=3 or mychoice < 0:
+  print("invalid number.Do it again")
+elif mychoice == 0 and random_computerchoice == 1:
+ print("loose")
+elif mychoice == 0 and random_computerchoice == 2:
+ print("win")
+elif mychoice == 0 and random_computerchoice == 0:
+  print("draw")
+#you choose paper and random computer
+elif mychoice == 1 and random_computerchoice == 1:
+ print("draw")
+elif mychoice == 1 and random_computerchoice == 2:
+ print("loose")
+elif mychoice == 1 and random_computerchoice == 0:
+  print("win")
+#you choose scissors and random computer
+elif mychoice == 2 and random_computerchoice == 1:
+ print("win")
+elif mychoice == 2 and random_computerchoice == 2:
+ print("draw")
+elif mychoice == 2 and random_computerchoice == 0:
+  print("loose")
+
+
+
+
+
