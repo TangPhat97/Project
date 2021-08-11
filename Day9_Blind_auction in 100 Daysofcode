@@ -1,0 +1,25 @@
+from replit import clear
+from art import logo
+print(logo)
+bidding = True
+
+while bidding:
+  name=input("Input your name ")
+  bid_price=int(input ("input your price $"))
+  #Create a loop for information guess
+  bid={}
+  bid[name]=bid_price
+  other_bid = input("Anyone wants to bid: 'yes' or 'no' ").lower()
+  if other_bid == "no":
+    bidding = False
+    highest_bid=0
+    for highest_price in bid:
+      value = bid[highest_price]
+      if value > highest_bid:
+        highest_bid = value
+    print(f"the winner is {name} ${value}")
+  elif other_bid == "yes":
+    clear()
+
+
+
