@@ -1,0 +1,49 @@
+from art import logo
+from replit import clear
+# calculator
+def add(n1,n2):
+  return n1+n2
+
+def substract(n1,n2):
+  return n1-n2
+
+def multiply(n1,n2):
+  return n1*n2
+
+def divide(n1,n2):
+  return n1/n2
+
+operation={
+"+" : add,
+"-" : substract,
+"*" : multiply,
+"/" : divide
+}
+def calculator():
+  print(logo)
+  n1 = float(input("input fisrt number:"))
+
+  for symbols in operation:
+    print(symbols)
+
+  calculating = True
+  while calculating:
+
+    operation_symbols= input("Pick the operation in line above: ")
+    n2 = float(input("input next number:"))
+
+    calc_function=operation[operation_symbols]
+    answer = calc_function(n1,n2)
+
+    print(f"{n1} {operation_symbols} {n2} = {answer}")
+    choice= input("Do you want to to use the calculator type 'yes' or 'no'\n ").lower()
+    if choice == "yes":
+        n1= answer
+        
+      
+    elif choice =="no":
+        calculating = False
+        clear()
+        calculator() # recursive call the self function of this
+calculator()
+        
