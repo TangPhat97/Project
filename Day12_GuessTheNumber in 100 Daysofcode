@@ -1,0 +1,39 @@
+import random
+
+def compare(answer,guess,turns):
+  if answer > guess:
+    print("Too high")
+    return turns-1
+  elif answer < guess:
+    print("Too low")
+    return turns-1
+  else:
+    print(f"You got it! The number is {answer}")
+
+EASY = 10
+HARD = 5
+
+
+def set_difficulty():
+  level = input("Chose level you want to play 'easy' or 'hard': ")
+  if  level == "easy":
+    return EASY
+  else:
+    return HARD
+
+def game():
+  print("Welcome to guess the number")
+  answer = random.randint(1,100)
+  print(f"Psst. The number is {answer}")
+  turns = set_difficulty()
+  guess = 0
+  while guess != answer:
+    print (f"You have {turns} attempts remaining.")
+    guess = int(input("Make a guess: "))
+    turns = compare(guess,answer,turns)
+    if turns == 0:
+      print("You run out of turn. You lose")
+      return
+    elif guess != answer:
+      print("Guess again")
+game()
